@@ -7,6 +7,9 @@ import com.sun.search.ui.CurSearchActivity
 import com.sun.search.ui.SkipSearchActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * main
+ */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
