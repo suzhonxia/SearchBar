@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="300" />
+
+    <ConstraintSet android:id="@+id/start" />
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@id/searchBackdrop"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            motion:layout_constraintEnd_toStartOf="@id/tvCancel"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+        <Constraint
+            android:id="@id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="25dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="@id/searchBackdrop"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="@id/searchBackdrop" />
+
+        <Constraint
+            android:id="@id/ivSearch"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="25dp"
+            motion:layout_constraintBottom_toBottomOf="@id/searchBackdrop"
+            motion:layout_constraintStart_toStartOf="@id/searchBackdrop"
+            motion:layout_constraintTop_toTopOf="@id/searchBackdrop" />
+
+        <Constraint
+            android:id="@id/etSearch"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            motion:layout_constraintBottom_toBottomOf="@id/searchBackdrop"
+            motion:layout_constraintLeft_toRightOf="@id/ivSearch"
+            motion:layout_constraintRight_toLeftOf="@id/ivClear"
+            motion:layout_constraintTop_toTopOf="@id/searchBackdrop" />
+
+        <Constraint
+            android:id="@id/ivClear"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="25dp"
+            android:alpha="0.0"
+            motion:layout_constraintBottom_toBottomOf="@id/searchBackdrop"
+            motion:layout_constraintRight_toRightOf="@id/searchBackdrop"
+            motion:layout_constraintTop_toTopOf="@id/searchBackdrop" />
+
+        <Constraint
+            android:id="@id/resultLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/searchBackdrop" />
+    </ConstraintSet>
+</MotionScene>

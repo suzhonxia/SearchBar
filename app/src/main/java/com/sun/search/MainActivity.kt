@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.sun.search.ui.CurSearchActivity
+import com.sun.search.ui.CurSearchMotionActivity
 import com.sun.search.ui.SkipSearchActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity() {
 
         btnCur.setOnClickListener {
             startActivity(Intent(this, CurSearchActivity::class.java))
+        }
+        btnCurMotion.setOnClickListener {
+            startActivity(Intent(this, CurSearchMotionActivity::class.java))
         }
         btnSkip.setOnClickListener {
             startActivity(Intent(this, SkipSearchActivity::class.java))

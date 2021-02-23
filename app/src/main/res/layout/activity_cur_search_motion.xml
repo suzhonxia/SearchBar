@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_cur_search_motion_scene"
+    app:motionDebug="SHOW_ALL">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:gravity="center"
+        android:text="标题"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/searchBackdrop"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:paddingLeft="25dp"
+        android:paddingTop="10dp"
+        android:paddingRight="25dp"
+        android:paddingBottom="10dp"
+        android:scaleType="centerCrop"
+        android:src="#f1f1f1"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:riv_corner_radius="18dp" />
+
+    <TextView
+        android:id="@+id/tvCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="#404040"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/searchBackdrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/searchBackdrop"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:padding="6dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="@id/searchBackdrop"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="@id/searchBackdrop"
+        app:layout_constraintRight_toLeftOf="@id/etSearch"
+        app:layout_constraintTop_toTopOf="@id/searchBackdrop"
+        tools:ignore="ContentDescription" />
+
+    <com.sun.search.widget.CustomEditText
+        android:id="@+id/etSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:background="@android:color/transparent"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:hint="搜索用户昵称或者课程名字"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="#404040"
+        android:textColorHint="#A1A1A1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/searchBackdrop"
+        app:layout_constraintLeft_toRightOf="@id/ivSearch"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/searchBackdrop"
+        tools:ignore="Autofill,HardcodedText" />
+
+    <ImageView
+        android:id="@+id/ivClear"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="25dp"
+        android:alpha="0.0"
+        android:padding="6dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_clear"
+        app:layout_constraintBottom_toBottomOf="@id/searchBackdrop"
+        app:layout_constraintRight_toRightOf="@id/searchBackdrop"
+        app:layout_constraintTop_toTopOf="@id/searchBackdrop"
+        tools:ignore="ContentDescription" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchBackdrop" />
+
+    <TextView
+        android:id="@+id/resultLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#33000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchBackdrop" />
+</androidx.constraintlayout.motion.widget.MotionLayout>

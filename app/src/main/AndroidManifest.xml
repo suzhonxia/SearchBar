@@ -20,6 +20,7 @@
         <activity android:name=".ui.CurSearchActivity" />
         <activity android:name=".ui.SkipSearchActivity" />
         <activity android:name=".ui.SearchPageActivity" />
+        <activity android:name=".ui.CurSearchMotionActivity" />
     </application>
 
 </manifest>
